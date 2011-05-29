@@ -3,3 +3,5 @@
 grails-spring-social-grailsPlugins.iml
 grails-spring-social.iml
 plugin.xml
+target/
+*.zip
