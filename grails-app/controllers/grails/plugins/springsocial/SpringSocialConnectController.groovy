@@ -16,7 +16,6 @@ package grails.plugins.springsocial
 
 import javax.inject.Inject
 import javax.inject.Provider
-import org.codehaus.groovy.grails.commons.ConfigurationHolder
 import org.springframework.social.connect.ConnectionFactoryLocator
 import org.springframework.social.connect.ConnectionRepository
 import org.springframework.social.connect.DuplicateConnectionException
@@ -34,8 +33,6 @@ class SpringSocialConnectController {
 
     private static final String DUPLICATE_CONNECTION_EXCEPTION_ATTRIBUTE = "_duplicateConnectionException"
 
-    def config = ConfigurationHolder.config
-
     def connectionFactoryLocator
     def usersConnectionRepository
 
@@ -43,7 +40,6 @@ class SpringSocialConnectController {
     Provider<ConnectionFactoryLocator> connectionFactoryLocatorProvider
     @Inject
     Provider<ConnectionRepository> connectionRepositoryProvider
-
 
     static allowedMethods = [withProvider: 'POST']
 
@@ -73,7 +69,7 @@ class SpringSocialConnectController {
     }
 
     String callbackUrl(provider) {
-        g.createLink(controller: 'springSocialConnect', action: provider, absolute: true)
+        g.createLink(mapping: 'springSocialConnect', params: [providerId: provider], absolute: true)
     }
 
     def oauthCallback = {
@@ -88,10 +84,7 @@ class SpringSocialConnectController {
             def accessToken = connectionFactory.getOAuthOperations().exchangeForAccessToken(new AuthorizedRequestToken(extractCachedRequestToken(session), verifier), null);
             def connection = connectionFactory.createConnection(accessToken)
             addConnection(session, connectionFactory, connection);
-
             redirect(url: handleSignIn(connection, session))
-
-
         } else if (code) {
             render "providerId: ${providerId}, pam: ${pam}"
         }
@@ -100,7 +93,7 @@ class SpringSocialConnectController {
     def disconnect = {
         def providerId = params.providerId
         getConnectionRepository().removeConnectionsToProvider(providerId)
-        redirect(uri: config.grails.plugins.springsocial.handleDisconnectUri)
+        redirect(uri: "/")
     }
 
     private void addConnection(session, connectionFactory, connection) {
@@ -119,7 +112,7 @@ class SpringSocialConnectController {
             session.setAttribute(ProviderSignInAttempt.SESSION_ATTRIBUTE, signInAttempt)
         }
 
-        return g.createLink(uri: config.grails.plugins.springsocial.handleSignInUri)
+        g.createLink(uri: "/")
     }
 
     private OAuthToken extractCachedRequestToken(session) {
@@ -128,8 +121,7 @@ class SpringSocialConnectController {
         requestToken
     }
 
-
     private ConnectionRepository getConnectionRepository() {
-        return connectionRepositoryProvider.get();
+        connectionRepositoryProvider.get()
     }
 }
