@@ -15,7 +15,7 @@
  */
 package grails.plugins.springsocial;
 
-import grails.grails.plugins.springsocial.config.ReflectionUtils;
+import grails.plugins.springsocial.config.ReflectionUtils;
 import grails.util.Environment;
 import groovy.lang.GroovyClassLoader;
 import groovy.util.ConfigObject;

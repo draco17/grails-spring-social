@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package grails.grails.plugins.springsocial.config
+package grails.plugins.springsocial.config
 
 import java.security.Principal
 import javax.inject.Inject

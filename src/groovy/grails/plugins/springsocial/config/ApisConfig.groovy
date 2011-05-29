@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package grails.grails.plugins.springsocial.config
+package grails.plugins.springsocial.config
 
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
@@ -26,26 +26,26 @@ import org.springframework.social.twitter.api.TwitterApi
 @Configuration
 class ApisConfig {
 
-    @Bean
+    /*@Bean
     @Scope(value = "request")
     FacebookApi facebookApi(ConnectionRepository connectionRepository) {
         Connection<FacebookApi> connection = connectionRepository.findPrimaryConnectionToApi(FacebookApi.class)
         return connection != null ? connection.getApi() : null
     }
 
-    /*@Bean
+    @Bean
     @Scope(value = "request")
     public TripItApi tripitApi(ConnectionRepository connectionRepository) {
         Connection<TripItApi> connection = connectionRepository.findPrimaryConnectionToApi(TripItApi.class)
         return connection != null ? connection.getApi() : null
-    }
+    }*/
 
     @Bean
     @Scope(value = "request")
     public TwitterApi twitterApi(ConnectionRepository connectionRepository) {
         Connection<TwitterApi> connection = connectionRepository.findPrimaryConnectionToApi(TwitterApi.class)
         return connection != null ? connection.getApi() : null
-    }*/
+    }
 
 }
 
