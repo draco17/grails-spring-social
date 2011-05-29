@@ -4,6 +4,7 @@ import org.springframework.security.crypto.encrypt.Encryptors
 import org.springframework.social.connect.jdbc.JdbcUsersConnectionRepository
 import org.codehaus.groovy.grails.commons.ConfigurationHolder
 import org.springframework.social.connect.ConnectionRepository
+import grails.plugins.springsocial.SpringSocialUtils
 
 class SpringSocialGrailsPlugin {
     // the plugin version
@@ -35,7 +36,7 @@ Spring Social plugin.
     def doWithSpring = {
         //def facebook = new FacebookConnectionFactory(config.facebook.appId, config.facebook.appSecret)
         //def tripit = new TripItConnectionFactory(config.tripit.consumerKey, config.tripit.consumerSecret)
-        def config = ConfigurationHolder.config
+        def config = SpringSocialUtils.config
 
         xmlns context: "http://www.springframework.org/schema/context"
         context.'component-scan'('base-package': "grails.plugins.springsocial.config")
