@@ -93,7 +93,7 @@ class SpringSocialConnectController {
     def disconnect = {
         def providerId = params.providerId
         getConnectionRepository().removeConnectionsToProvider(providerId)
-        redirect(uri: "/")
+        redirect(uri: SpringSocialUtils.config.postDisconnectUri)
     }
 
     private void addConnection(session, connectionFactory, connection) {
@@ -111,8 +111,7 @@ class SpringSocialConnectController {
             def signInAttempt = new ProviderSignInAttempt(connection, connectionFactoryLocatorProvider, connectionRepositoryProvider);
             session.setAttribute(ProviderSignInAttempt.SESSION_ATTRIBUTE, signInAttempt)
         }
-
-        g.createLink(uri: "/")
+        g.createLink(uri: SpringSocialUtils.config.postSignInUri)
     }
 
     private OAuthToken extractCachedRequestToken(session) {
