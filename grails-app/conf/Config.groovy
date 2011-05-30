@@ -13,7 +13,8 @@
  * limitations under the License.
  */
 
-// configuration for plugin testing - will not be included in the plugin zip
+grails.views.default.codec="none" // none, html, base64
+grails.views.gsp.encoding="UTF-8"
  
 log4j = {
     // Example of changing the log pattern for the default console
@@ -36,22 +37,4 @@ log4j = {
            'net.sf.ehcache.hibernate'
 
     warn   'org.mortbay.log'
-}
-
-
-facebook {
-    appId = "27d9bcea3c686d1bdaaf597f725ca875"
-    appSecret = "0e1037e0edbe4d378c32e2e1a0be77d1"
-    postToWallFlag = "postToWall"
-}
-
-twitter {
-    consumerKey = "VDtfobfXlwpeuCwMEFrU5A"
-    consumerSecret = "aZOtwPO0PRy35Qdy94Nk6JAYLhTHVWFTk06RWed0I"
-    postTweetFlag = "postTweet"
-}
-
-tripit {
-    consumerKey = "c67a632af8b7f11fce3dcc82ab9a9c72492bb88b"
-    consumerSecret = "10d6501813b0b085b824e5039f6e9bae35e3457c"
 }
