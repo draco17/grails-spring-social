@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title>Tweeter Trending Topics</title>
+    <title>Twitter Trending Topics</title>
     <meta name='layout' content='springSocialMain'/>
 </head>
 

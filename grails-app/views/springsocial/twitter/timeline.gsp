@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title>Tweeter TimeLine</title>
+    <title>Twitter TimeLine</title>
     <meta name='layout' content='springSocialMain'/>
 </head>
 

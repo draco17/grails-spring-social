@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title>Tweeter Profile</title>
+    <title>Twitter Profile</title>
     <meta name='layout' content='springSocialMain'/>
 </head>
 
