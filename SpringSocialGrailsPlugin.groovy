@@ -1,10 +1,8 @@
-import org.springframework.social.twitter.connect.TwitterConnectionFactory
-import org.springframework.social.connect.support.ConnectionFactoryRegistry
+import grails.plugins.springsocial.SpringSocialUtils
 import org.springframework.security.crypto.encrypt.Encryptors
 import org.springframework.social.connect.jdbc.JdbcUsersConnectionRepository
-import org.codehaus.groovy.grails.commons.ConfigurationHolder
-import org.springframework.social.connect.ConnectionRepository
-import grails.plugins.springsocial.SpringSocialUtils
+import org.springframework.social.connect.support.ConnectionFactoryRegistry
+import org.springframework.social.twitter.connect.TwitterConnectionFactory
 
 class SpringSocialGrailsPlugin {
     // the plugin version
@@ -15,7 +13,8 @@ class SpringSocialGrailsPlugin {
     def dependsOn = [:]
     // resources that are excluded from plugin packaging
     def pluginExcludes = [
-            "grails-app/views/error.gsp"
+            "grails-app/views/error.gsp",
+            "grails-app/i18n/**"
     ]
 
     // TODO Fill in these fields
