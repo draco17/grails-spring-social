@@ -10,11 +10,10 @@
 
 <h4>Post a tweet</h4>
 
-<form action="${tweetUrl}" method="post">
-    <textarea name="message" rows="2" cols="80"></textarea><br/>
-    <input type="submit" value="Post Tweet"/>
-</form>
-
+<g:form controller="springSocialTwitter" action="tweet">
+    <g:textArea name="message" rows="2" cols="80" />
+    <g:submitButton name="submit" value="Send Tweet"/>
+</g:form>
 
 <form action="${searchUrl}" method="get">
     <p><input type="text" name="query" value="${query}"/> <input type="submit" value="Search"/></p>

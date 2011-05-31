@@ -102,6 +102,12 @@ class SpringSocialTwitterController {
         render view: SpringSocialUtils.config.twitter.page.trends, model: ['trends': trends]
     }
 
+    def tweet = {
+        def message = params.message
+        getTwitterApi().timelineOperations().updateStatus(message)
+        redirect(action: timeline, params: [id: 'user'])
+    }
+
     Boolean isConnected() {
         getTwitterApi()
     }
