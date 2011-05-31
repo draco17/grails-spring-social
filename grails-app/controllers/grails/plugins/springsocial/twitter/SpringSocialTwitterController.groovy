@@ -29,9 +29,9 @@ class SpringSocialTwitterController {
     def index = {
         if (isConnected()) {
             def model = ["profile": getTwitterApi().userOperations().getUserProfile()]
-            render(view: SpringSocialUtils.config.twitterConnectedHomePage, model: model)
+            render(view: SpringSocialUtils.config.twitter.page.connectedHome, model: model)
         } else {
-            redirect(uri: SpringSocialUtils.config.twitterConnectPage)
+            render(view: SpringSocialUtils.config.twitter.page.connect)
         }
     }
 
@@ -62,7 +62,7 @@ class SpringSocialTwitterController {
                 break
         }
 
-        render view: SpringSocialUtils.config.twitterTimeLine, model: ['timeline': tweets]
+        render view: SpringSocialUtils.config.twitter.page.timeLine, model: ['timeline': tweets]
     }
 
     def profiles = {
@@ -76,7 +76,7 @@ class SpringSocialTwitterController {
                 profiles = getTwitterApi().friendOperations().getFollowers()
                 break
         }
-        render view: SpringSocialUtils.config.twitterProfiles, model: ['profiles': profiles]
+        render view: SpringSocialUtils.config.twitter.page.profiles, model: ['profiles': profiles]
     }
 
     def messages = {
@@ -84,17 +84,17 @@ class SpringSocialTwitterController {
         def directMessages
         switch (dmListType) {
             case 'received':
-                directMessages = getTwitterApi().directMessageOperations().directMessagesReceived()
+                directMessages = getTwitterApi().directMessageOperations().getDirectMessagesReceived()
                 break
             case 'sent':
-                directMessages = getTwitterApi().directMessageOperations().directMessagesSent()
+                directMessages = getTwitterApi().directMessageOperations().getDirectMessagesSent()
                 break
             default:
-                directMessages = getTwitterApi().directMessageOperations().directMessagesReceived()
+                directMessages = getTwitterApi().directMessageOperations().getDirectMessagesReceived()
                 break
         }
 
-        render view: SpringSocialUtils.config.twitterDirectMessages, model: ['directMessages': directMessages, 'dmListType': dmListType]
+        render view: SpringSocialUtils.config.twitter.page.directMessages, model: ['directMessages': directMessages, 'dmListType': dmListType]
     }
 
     Boolean isConnected() {

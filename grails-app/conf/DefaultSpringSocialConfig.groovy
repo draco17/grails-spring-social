@@ -17,9 +17,9 @@ springsocial {
     postSignInUri = "/"
     postDisconnectUri = "/"
 
-    twitterConnectPage = ""
-    twitterConnectedHomePage = "/"
-    twitterTimeLine = "/"
-    twitterProfiles = "/"
-    twitterDirectMessages = "/"
+    twitter.page.connect = "/springSocialTwitter/connect"
+    twitter.page.connectedHome = "/springSocialTwitter/index"
+    twitter.page.timeLine = "/springSocialTwitter/timeline"
+    twitter.page.profiles = "/springSocialTwitter/profiles"
+    twitter.page.directMessages = "/springSocialTwitter/messages"
 }
