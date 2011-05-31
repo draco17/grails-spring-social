@@ -6,7 +6,14 @@
 
 <body>
 
-<h3>Your Twitter ${timelineName} Timeline</h3>
+<g:if test="${flash.message}">
+    <h3>${flash.message}</h3>
+</g:if>
+<g:else>
+    <h3>Your Twitter ${timelineName} Timeline</h3>
+</g:else>
+
+
 
 <h4>Post a tweet</h4>
 
@@ -15,10 +22,11 @@
     <g:submitButton name="submit" value="Send Tweet"/>
 </g:form>
 
-<form action="${searchUrl}" method="get">
-    <p><input type="text" name="query" value="${query}"/> <input type="submit" value="Search"/></p>
-</form>
 
+<g:form controller="springSocialTwitter" action="search">
+    <g:textField name="query"/><br/>
+    <g:submitButton name="submit" value="Search"/>
+</g:form>
 
 <ul class="choices">
     <li><g:link controller="springSocialTwitter" action="timeline" id="home">Home Timeline</g:link></li>

@@ -108,6 +108,13 @@ class SpringSocialTwitterController {
         redirect(action: timeline, params: [id: 'user'])
     }
 
+    def search = {
+        def query = params.query
+        def tweets = getTwitterApi().searchOperations().search(query).getTweets()
+        flash.message = "Search result for '${query}'"
+        render view: SpringSocialUtils.config.twitter.page.timeLine, model: ['timeline': tweets]
+    }
+
     Boolean isConnected() {
         getTwitterApi()
     }
