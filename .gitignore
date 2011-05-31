@@ -5,3 +5,4 @@ grails-spring-social.iml
 plugin.xml
 target/
 *.zip
+*.tld

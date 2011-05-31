@@ -1,7 +1,7 @@
 <html>
 <head>
     <title>Connected to Twitter</title>
-    <meta name='layout' content='main' />
+    <meta name='layout' content='springSocialMain' />
 </head>
 <body>
 <h1>Connected to Twitter</h1>

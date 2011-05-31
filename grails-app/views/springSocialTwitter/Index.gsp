@@ -1,7 +1,7 @@
 <html>
 <head>
     <title>Tweeter Profile</title>
-    <meta name='layout' content='main'/>
+    <meta name='layout' content='springSocialMain'/>
 </head>
 
 <body>
