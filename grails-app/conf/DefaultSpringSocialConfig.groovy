@@ -16,4 +16,10 @@
 springsocial {
     postSignInUri = "/"
     postDisconnectUri = "/"
+
+    twitterConnectPage = ""
+    twitterConnectedHomePage = "/"
+    twitterTimeLine = "/"
+    twitterProfiles = "/"
+    twitterDirectMessages = "/"
 }
