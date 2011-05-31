@@ -36,6 +36,11 @@ Spring Social plugin.
         //def facebook = new FacebookConnectionFactory(config.facebook.appId, config.facebook.appSecret)
         //def tripit = new TripItConnectionFactory(config.tripit.consumerKey, config.tripit.consumerSecret)
         def config = SpringSocialUtils.config
+        def twitterCK = config.twitter.consumerKey ?: ''
+        def twitterCS = config.twitter.consumerSecret
+        if(!twitterCK) {
+            println "[SpringSocial] WARNING: Twitter not configured"
+        }
 
         xmlns context: "http://www.springframework.org/schema/context"
         context.'component-scan'('base-package': "grails.plugins.springsocial.config")
@@ -43,7 +48,7 @@ Spring Social plugin.
 
         connectionFactoryLocator(ConnectionFactoryRegistry) {
             //connectionFactories = [twitter, facebook, tripit]
-            connectionFactories = [new TwitterConnectionFactory(config.twitter.consumerKey, config.twitter.consumerSecret)]
+            connectionFactories = [new TwitterConnectionFactory(twitterCK, twitterCS)]
         }
 
         textEncryptor(Encryptors) { bean ->
