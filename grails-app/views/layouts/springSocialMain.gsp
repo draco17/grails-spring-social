@@ -2,8 +2,8 @@
 <html>
 <head>
     <title>Spring Social Grails Plugin - <g:layoutTitle default="Grails"/></title>
-    <link rel="stylesheet" href="${resource(dir: 'css/springSocial', file: 'page.css')}"/>
-    <link rel="stylesheet" href="${resource(dir: 'css/springSocial', file: 'form.css')}"/>
+    <link rel="stylesheet" href="${resource(dir: 'css/springsocial', file: 'page.css')}"/>
+    <link rel="stylesheet" href="${resource(dir: 'css/springsocial', file: 'form.css')}"/>
     <g:layoutHead/>
 </head>
 
