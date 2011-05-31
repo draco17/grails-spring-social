@@ -97,6 +97,11 @@ class SpringSocialTwitterController {
         render view: SpringSocialUtils.config.twitter.page.directMessages, model: ['directMessages': directMessages, 'dmListType': dmListType]
     }
 
+    def trends = {
+        def trends = getTwitterApi().searchOperations().getCurrentTrends()
+        render view: SpringSocialUtils.config.twitter.page.trends, model: ['trends': trends]
+    }
+
     Boolean isConnected() {
         getTwitterApi()
     }

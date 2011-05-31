@@ -22,4 +22,5 @@ springsocial {
     twitter.page.timeLine = "/springSocialTwitter/timeline"
     twitter.page.profiles = "/springSocialTwitter/profiles"
     twitter.page.directMessages = "/springSocialTwitter/messages"
+    twitter.page.trends = "/springSocialTwitter/trends"
 }

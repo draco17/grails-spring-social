@@ -6,7 +6,7 @@
         <li><g:link controller="springSocialTwitter" action="profiles" id="friends">Friends</g:link></li>
         <li><g:link controller="springSocialTwitter" action="profiles" id="followers">Followers</g:link></li>
         <li><g:link controller="springSocialTwitter" action="messages">Messages</g:link></li>
-        <li><g:link controller="springSocialTwitter" action="tt">Current Trends</g:link></li>
+        <li><g:link controller="springSocialTwitter" action="trends">Current Trends</g:link></li>
     </ul>
 
 
