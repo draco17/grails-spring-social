@@ -13,7 +13,7 @@
 </div>
 
 <div id="leftNav">
-    <g:render template="/springSocialTwitter/menu"/>
+    <g:render template="/springsocial/twitter/menu"/>
 </div>
 
 <div id="content">
